@@ -1,5 +1,8 @@
-TEST
 
 <% @rooms.each do |room| %>
-  <%= room.name %>
+<p>Room: <%= link_to room.name, room %></p>
+<p>Occupancy: <%= room.capacity %><p>
+
 <% end %>
+
+<%= link_to "Add New Room", new_room_path %>
