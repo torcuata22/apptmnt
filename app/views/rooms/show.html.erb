@@ -1,3 +1,5 @@
 <%= @room.name %>
 <%= @room.capacity %>
 <%= button_to "Delete this room", @room, method: :delete %>
+
+<%= link_to "Back to all rooms", rooms_path %>
