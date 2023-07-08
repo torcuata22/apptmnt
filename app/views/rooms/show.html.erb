@@ -1,5 +1,16 @@
-<%= @room.name %>
-<%= @room.capacity %>
+<h2><%= @room.name %></h2>
+<h3>Room Capacity: <%= @room.capacity %></h3>
+<br>
 <%= button_to "Delete this room", @room, method: :delete %>
+
+<h3>Bookings for this room:</h3>
+<% @room.bookings.each do |booking| %>
+    <p>Start: <%= booking.start %></p>
+    <p>End: <%= booking.end %></p>
+    <p>Purpose: <%= booking.purpose %></p>
+    <p><%= link_to "Go to Booking", booking %></p>
+
+
+<% end %>
 
 <%= link_to "Back to all rooms", rooms_path %>
